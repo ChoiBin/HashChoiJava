@@ -363,6 +363,7 @@ public class DeptEmpTest {
 ```java
        //3. 创建核心对象
         SqlSession sqlSession=sqlSessionFactory.openSession();
+
 ```
 
 ![1567061561480](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1567061561480.png)
@@ -376,6 +377,7 @@ public class DeptEmpTest {
 ```java
         //4. 得到Mapper代理对象
         DeptEmpMapper deptEmpMapper=sqlSession.getMapper(DeptEmpMapper.class);	
+
 ```
 
 ![1567061876944](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1567061876944.png)
@@ -391,6 +393,7 @@ public class DeptEmpTest {
 ```java
         //5. 调用自定义的方法实现查询功能
         List<DeptEmp> list= deptEmpMapper.getEmpTotalByDept();
+
 ```
 
 ![1567062083503](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1567062083503.png)
