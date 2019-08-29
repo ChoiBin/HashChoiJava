@@ -86,7 +86,7 @@
 1. 对JDBC进行API层的抽取和封装，以及功能的增强，经典代表是DbUtils.
 2. 借助面向对象的思想，以对象的方式操作数据库，无需编写sql语句，典型代表就是ORM。ORM(Object Relational Mapping)吸收了面向对象的思想，把对 sql 的操作 转换为对象的操作，从而让程序员使用起来更加方便和易于接受。这种转换是通过对象和表之间的元数据映射实现的，这是实现 ORM 的关键，如下图所示
 
-![1567041896982](https://github.com/ChoiBin/HashChoiJava/tree/master/picture/1567041896982.png)
+![1567041896982](https://github.com/ChoiBin/HashChoiJava/blob/master/picture/1567041896982.png)
 
 由于类和表之间以及属性和字段之间建立起了映射关系，所以，通过 sql 对表的操作就 可以转换为对象的操作，程序员从此无需编写 sql 语句，由框架根据映射关系自动生成，这 就是 ORM 思想。
 
