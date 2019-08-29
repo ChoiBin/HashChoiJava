@@ -96,7 +96,7 @@
 
 ### 2.1、案例结构
 
-![1567059815288](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1567059815288.png)
+![1567059815288](https://github.com/ChoiBin/HashChoiJava/blob/master/picture/1567059815288.png)
 
 ### 2.2、entity实体类
 
@@ -319,11 +319,11 @@ public class DeptEmpTest {
 
 **注意：**pom文件中必须引入这个<build>标签中的内容，否则mapper.xml文件将不会被编译，导致项目启动的时候找不到对应的xml文件。如下图所示
 
-![1567060430392](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1567060430392.png)
+![1567060430392](https://github.com/ChoiBin/HashChoiJava/blob/master/picture/1567060430392.png)
 
 ### 2.7、运行结果
 
-![1567060489712](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1567060489712.png)
+![1567060489712](https://github.com/ChoiBin/HashChoiJava/blob/master/picture/1567060489712.png)
 
 ### 2.8、MyBatis的ORM实现原理
 
@@ -340,23 +340,23 @@ public class DeptEmpTest {
         SqlSessionFactory sqlSessionFactory=sqlSessionFactoryBuilder.build(inputStream);
 ```
 
-![1567060796807](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1567060796807.png)
+![1567060796807](https://github.com/ChoiBin/HashChoiJava/blob/master/picture/1567060796807.png)
 
-![1567060820318](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1567060820318.png)
+![1567060820318](https://github.com/ChoiBin/HashChoiJava/blob/master/picture/1567060820318.png)
 
-![1567060848280](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1567060848280.png)
+![1567060848280](https://github.com/ChoiBin/HashChoiJava/blob/master/picture/1567060848280.png)
 
 通过断点调试，在第69行的时候创建了一个xml解析器对象，并在第70行对MyBatis核心配置文件进行了解析，拿到了数据库连接数据和银蛇配置文件中的数据（包括我们编写的sql语句和自定义的resultMap），如下所示
 
-![1567060909529](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1567060909529.png)
+![1567060909529](https://github.com/ChoiBin/HashChoiJava/blob/master/picture/1567060909529.png)
 
-![1567060958760](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1567060958760.png)
+![1567060958760](https://github.com/ChoiBin/HashChoiJava/blob/master/picture/1567060958760.png)
 
-![1567061127290](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1567061127290.png)
+![1567061127290](https://github.com/ChoiBin/HashChoiJava/blob/master/picture/1567061127290.png)
 
 在88行代码中创建了DefaultSqlSessionFactory对象，并把上图中展示的解析数据传给它，继续跟踪
 
-![1567061414570](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1567061414570.png)
+![1567061414570](https://github.com/ChoiBin/HashChoiJava/blob/master/picture/1567061414570.png)
 
 2. 调用sqlSessionFactory的openSession方法创建sqlSession
 
@@ -365,9 +365,9 @@ public class DeptEmpTest {
         SqlSession sqlSession=sqlSessionFactory.openSession();
 ```
 
-![1567061561480](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1567061561480.png)
+![1567061561480](https://github.com/ChoiBin/HashChoiJava/blob/master/picture/1567061561480.png)
 
-![1567061649128](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1567061649128.png)
+![1567061649128](https://github.com/ChoiBin/HashChoiJava/blob/master/picture/1567061649128.png)
 
 图中71行-75行代码，主要是通过读取Configuration对象中的数据分别创建了Environment对象，事务对象，Executor对象，最终直接new了一个DefaultSqlSession对象（**SqlSession接口的实现类**），该对象是MyBatis对象的核心对象。
 
@@ -378,11 +378,11 @@ public class DeptEmpTest {
         DeptEmpMapper deptEmpMapper=sqlSession.getMapper(DeptEmpMapper.class);	
 ```
 
-![1567061876944](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1567061876944.png)
+![1567061876944](https://github.com/ChoiBin/HashChoiJava/blob/master/picture/1567061876944.png)
 
-![1567061897152](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1567061897152.png)
+![1567061897152](https://github.com/ChoiBin/HashChoiJava/blob/master/picture/1567061897152.png)
 
-![1567061934964](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1567061934964.png)
+![1567061934964](https://github.com/ChoiBin/HashChoiJava/blob/master/picture/1567061934964.png)
 
 通过第34行代码中的代理工厂最终把我们自定义的Mapper接口的代理对象创建出来
 
@@ -393,41 +393,41 @@ public class DeptEmpTest {
         List<DeptEmp> list= deptEmpMapper.getEmpTotalByDept();
 ```
 
-![1567062083503](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1567062083503.png)
+![1567062083503](https://github.com/ChoiBin/HashChoiJava/blob/master/picture/1567062083503.png)
 
 当我们调用代理对象的getEmpTotalByDept方法时，框架内部会调用MapperProxy的invoke方法，我们可以观察这个方法的三个参数值：
 
-![1567062221669](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1567062221669.png)
+![1567062221669](https://github.com/ChoiBin/HashChoiJava/blob/master/picture/1567062221669.png)
 
 在invoke方法的内部，调用了execute方法执行查询
 
-![1567062320958](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1567062320958.png)
+![1567062320958](https://github.com/ChoiBin/HashChoiJava/blob/master/picture/1567062320958.png)
 
 在execute方法内部先进行增删查改的判断，本次案例是查询，并且可能查出多条记录，所以走的是60行代码，进入该行代码
 
-![1567062404178](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1567062404178.png)
+![1567062404178](https://github.com/ChoiBin/HashChoiJava/blob/master/picture/1567062404178.png)
 
 第124行代码是判断是否进行分页查询，本案例中不需要，所以执行的是else中的代码
 
-![1567062493428](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1567062493428.png)
+![1567062493428](https://github.com/ChoiBin/HashChoiJava/blob/master/picture/1567062493428.png)
 
 继续跟踪，发现123行代码从Configuration对象中，获取了MappedStatement对象，该对象存储的是映射配置文件中的所有信息，如下图所示
 
-![1567062521717](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1567062521717.png)
+![1567062521717](https://github.com/ChoiBin/HashChoiJava/blob/master/picture/1567062521717.png)
 
-![1567062609002](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1567062609002.png)
+![1567062609002](https://github.com/ChoiBin/HashChoiJava/blob/master/picture/1567062609002.png)
 
 继续往下跟踪
 
-![1567062659557](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1567062659557.png)
+![1567062659557](https://github.com/ChoiBin/HashChoiJava/blob/master/picture/1567062659557.png)
 
-![1567062706545](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1567062706545.png)
+![1567062706545](https://github.com/ChoiBin/HashChoiJava/blob/master/picture/1567062706545.png)
 
-![1567062780695](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1567062780695.png)
+![1567062780695](https://github.com/ChoiBin/HashChoiJava/blob/master/picture/1567062780695.png)
 
 最后发现，在134行代码中调用了queryFromDataBase方法最终执行了sql语句查询，并将查询结构按照我们自定义的resultMap进行封装，如下图所示
 
-![1567062906043](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1567062906043.png)
+![1567062906043](https://github.com/ChoiBin/HashChoiJava/blob/master/picture/1567062906043.png)
 
 总结：MyBatis工作原理
 
