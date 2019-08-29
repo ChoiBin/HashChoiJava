@@ -1,4 +1,4 @@
-## 一、ORM思想和MyBatis实现原理
+## 一、ORM思想
 
 ​	目前的市场上，通过Java语言连接并操作数据库的技术或者方式以及有很多，例如：JDBC、MyBatis、Hibernate等等。其中JDBC是Java的原生API，支持连接并操作各种关系型数据库。
 
